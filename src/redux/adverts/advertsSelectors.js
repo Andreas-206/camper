@@ -1,13 +1,13 @@
-import { createSelector } from '@reduxjs/toolkit';
+import { createSelector } from "@reduxjs/toolkit";
 
-export const advertsSelector = state => state.camper.adventers;
-export const favoriteSelector = state => state.camper.favorites;
+export const advertsSelector = (state) => state.camper.adventers;
+export const favoriteSelector = (state) => state.camper.favorites;
 
-export const getFavoriteSelector = createSelector(
+export const gerFavoriteSelector = createSelector(
   [advertsSelector, favoriteSelector],
-  (adventers, favorites) => {
-    return adverts.filter(advert => {
-      return favorites.includes(advert._id)
-    })
-    }
-)
+  (adverts, favorite) => {
+    return adverts.filter((advert) => {
+      return favorite.includes(advert._id);
+    });
+  },
+);

@@ -10,7 +10,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import {adventerReducer} from './adverts/adventerSlice.js';
+import { adventerReducer } from './adverts/advertsSlice.js';
 
 const persistConfig = {
   key: 'favorites',
@@ -32,4 +32,4 @@ export const store = configureStore({
     }),
 });
 
-export const persistor = persistStore(store)
+export const persistor = persistStore(store);

@@ -1,14 +1,14 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import {getCampers} from '../../services/api';
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { getCampars } from "../../services/api";
 
 export const getAdverts = createAsyncThunk(
-  'camper/getAdverts',
+  "camper/getAdverts",
   async (page, thunkAPI) => {
     try {
-      const response = await getCampers(page);
-      return response;
+      const adverts = await getCampars(page);
+      return adverts;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  }
-)
+  },
+);
