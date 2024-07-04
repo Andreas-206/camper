@@ -21,11 +21,11 @@ const equipments = [
   { icon: "icon-transmission", text: "Automatic" },
   { icon: "icon-kitchen", text: "Kitchen" },
   { icon: "icon-tv", text: "TV" },
-  { icon: "icon-shower", text: "Shwer/WC" },
+  { icon: "icon-shower", text: "Shower/WC" },
 ];
 const types = [
   { icon: "icon-van", text: "Van" },
-  { icon: "icon-fully-integrated", text: "Fully Intergrated" },
+  { icon: "icon-fully-integrated", text: "Fully Integrated" },
   { icon: "icon-alcove", text: "Alcove" },
 ];
 
