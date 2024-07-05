@@ -12,12 +12,10 @@ export const FavoritesPage = () => {
       {favorite.length > 0 ? (
         <CatalogContainer>
           <AsvertsFilter />
-          <AsvertsList adverts={favorite} />
+          <AsvertsList adverds={favorite} />
         </CatalogContainer>
       ) : (
-        <Message>
-        You haven't added any favorites yet. Explore our selection of campers and add your preferred options to your favorites list. This will help you easily compare and choose the perfect camper for your next adventure. Start browsing now and find the ideal match for your travel plans!
-        </Message>
+        <Message>You have no favorites yet</Message>
       )}
     </>
   );
