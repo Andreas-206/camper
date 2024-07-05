@@ -1,13 +1,13 @@
 import { AdverdsCardItem } from "../AdverdsCardItem/AdverdsCardItem";
 import { AdverdsContainer, List } from "./AdvertsList.styled";
 
-export const AsvertsList = ({ adverds }) => {
+export const AsvertsList = ({ adverts }) => {
   return (
     <AdverdsContainer>
       <List>
-        {adverds.length > 0 &&
-          adverds.map((adverd) => (
-            <AdverdsCardItem key={adverd._id} adverd={adverd} />
+        {adverts.length > 0 &&
+          adverts.map((advert) => (
+            <AdverdsCardItem key={advert._id} adverd={advert} />
           ))}
       </List>
     </AdverdsContainer>
