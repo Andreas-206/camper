@@ -1,6 +1,6 @@
 import { TypeCardItem } from "../TypeCardItem/TypeCardItem";
 import icons from "../../img/sprite.svg";
-import styles from "./AdverdsCardItem.module.css";
+import styles from "./AdvertsCardItem.module.css";
 import { useState } from "react";
 import CamperInfoModal from "../CamperInfoModal/CamperInfoModal";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +11,7 @@ import {
 import { favoriteSelector } from "../../redux/adverts/advertsSelectors";
 import clsx from "clsx";
 
-export const AdverdsCardItem = ({ adverd }) => {
+export const AdvertsCardItem = ({ adverd }) => {
   const [modal, setModal] = useState(false);
   const dispatch = useDispatch();
   const favorites = useSelector(favoriteSelector);
