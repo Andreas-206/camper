@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   BtnSubmit,
   FormContainer,
-  FormDesctiption,
+  FormDescription,
   FormHeader,
   FormTitle,
   Input,
@@ -48,10 +48,10 @@ export const Form = () => {
   return (
     <FormContainer>
       <FormHeader>
-        <FormTitle>Book your campervan now</FormTitle>
-        <FormDesctiption>
+        <FormTitle>Book your camper now</FormTitle>
+        <FormDescription>
           Stay connected! We are always ready to help you.
-        </FormDesctiption>
+        </FormDescription>
       </FormHeader>
       <form onSubmit={formik.handleSubmit}>
         <InputsWrap>

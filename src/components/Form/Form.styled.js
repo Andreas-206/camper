@@ -7,7 +7,7 @@ export const FormContainer = styled.div`
 `;
 export const FormHeader = styled.div``;
 export const FormTitle = styled.h2``;
-export const FormDesctiption = styled.p``;
+export const FormDescription = styled.p``;
 export const InputsWrap = styled.div`
   display: flex;
   flex-direction: column;
