@@ -1,15 +1,15 @@
-import { AdvertsCardItem } from "../AdvertsCardItem/AdvertsCardItem";
-import { AdvertsContainer, List } from "./AdvertsList.styled";
+import { AdverdsCardItem } from "../AdverdsCardItem/AdverdsCardItem";
+import { AdverdsContainer, List } from "./AdvertsList.styled";
 
 export const AdvertsList = ({ adverts }) => {
   return (
-    <AdvertsContainer>
+    <AdverdsContainer>
       <List>
         {adverts.length > 0 &&
           adverts.map((advert) => (
-            <AdvertsCardItem key={advert._id} advert={advert} />
+            <AdverdsCardItem key={advert._id} adverd={advert} />
           ))}
       </List>
-    </AdvertsContainer>
+    </AdverdsContainer>
   );
 };

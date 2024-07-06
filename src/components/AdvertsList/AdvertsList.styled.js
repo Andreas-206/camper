@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const AdvertsContainer = styled.div`
+export const AdverdsContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
