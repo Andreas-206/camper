@@ -1,21 +1,6 @@
 import { TypeCardItem } from "../TypeCardItem/TypeCardItem";
 import icons from "../../img/sprite.svg";
-import {
-  Description,
-  HeaderCamper,
-  ImgCamper,
-  Item,
-  IconHard,
-  NameCamper,
-  PriceCamper,
-  TapyCardList,
-  IconStar,
-  ReviewsCamper,
-  InfoCamper,
-  IconLocation,
-  LocationCamper,
-  ButtonShowMore,
-} from "./AdverdsCardItem.styled";
+import styles from "./AdverdsCardItem.module.css";
 import { useState } from "react";
 import CamperInfoModal from "../CamperInfoModal/CamperInfoModal";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,64 +22,67 @@ export const AdverdsCardItem = ({ adverd }) => {
       ? dispatch(removeFavorites(adverd._id))
       : dispatch(addFavorites(adverd));
   };
+
   const isFavorite = () => {
     return favorites.some((item) => item._id === adverd._id);
   };
+
   const onClose = () => {
     setModal(false);
   };
+
   const onOpen = () => {
     setModal(true);
   };
 
   return (
-    <Item>
-      <ImgCamper src={adverd.gallery[0]} alt={adverd.name} />
-      <div className="info-container">
-        <HeaderCamper>
-          <NameCamper>{adverd.name}</NameCamper>
-          <PriceCamper>€{adverd.price.toFixed(2)}</PriceCamper>
+    <li className={styles.item}>
+      <img className={styles.imgCamper} src={adverd.gallery[0]} alt={adverd.name} />
+      <div className={styles.infoContainer}>
+        <div className={styles.headerCamper}>
+          <h2 className={styles.nameCamper}>{adverd.name}</h2>
+          <p className={styles.priceCamper}>€{adverd.price.toFixed(2)}</p>
           <button type="button">
-            <IconHard onClick={switchFavorite}>
+            <svg className={styles.iconHard} onClick={switchFavorite}>
               <use
                 href={`${icons}#${clsx(
                   { "icon-heart-default": !isFavorite() },
                   { "icon-heart-fill": isFavorite() },
                 )}`}
               ></use>
-            </IconHard>
+            </svg>
           </button>
-        </HeaderCamper>
-        <InfoCamper>
-          <ReviewsCamper>
-            <IconStar>
+        </div>
+        <div className={styles.infoCamper}>
+          <p className={styles.reviewsCamper}>
+            <svg className={styles.iconStar}>
               <use href={`${icons}#icon-star`}></use>
-            </IconStar>
+            </svg>
             <u>
               {adverd.rating}({adverd.reviews.length} Reviews)
             </u>
-          </ReviewsCamper>
-          <LocationCamper>
-            <IconLocation>
+          </p>
+          <p className={styles.locationCamper}>
+            <svg className={styles.iconLocation}>
               <use href={`${icons}#icon-map-pin`}></use>
-            </IconLocation>
+            </svg>
             {adverd.location}
-          </LocationCamper>
-        </InfoCamper>
-        <Description>{adverd.description}</Description>
-        <TapyCardList>
+          </p>
+        </div>
+        <p className={styles.description}>{adverd.description}</p>
+        <ul className={styles.tapyCardList}>
           <TypeCardItem icon="adults" text="adults" value={adverd.adults} />
           <TypeCardItem icon="transmission" text="Automatic" />
           <TypeCardItem icon="engine" text="Petrol" />
           <TypeCardItem icon="kitchen" text="Kitchen" />
           <TypeCardItem icon="beds" text="beds" value={adverd.details.beds} />
           <TypeCardItem icon="airConditioner" text="AC" />
-        </TapyCardList>
-        <ButtonShowMore type="button" onClick={() => onOpen()}>
+        </ul>
+        <button type="button" className={styles.buttonShowMore} onClick={onOpen}>
           Show more
-        </ButtonShowMore>
+        </button>
       </div>
       {modal && <CamperInfoModal onClose={onClose} adverd={adverd} />}
-    </Item>
+    </li>
   );
 };
