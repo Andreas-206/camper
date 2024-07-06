@@ -12,7 +12,7 @@ export const FavoritesPage = () => {
       {favorite.length > 0 ? (
         <CatalogContainer>
           <AsvertsFilter />
-          <AdvertsList adverds={favorite} />
+          <AdvertsList adverts={favorite} />
         </CatalogContainer>
       ) : (
         <Message>You have no favorites yet</Message>

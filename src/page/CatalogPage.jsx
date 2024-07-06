@@ -11,7 +11,7 @@ import { advertsSelector } from "../redux/adverts/advertsSelectors";
 import { getAdverts } from "../redux/adverts/advertsOperations";
 
 export const CatalogPage = () => {
-  const adverds = useSelector(advertsSelector);
+  const adverts = useSelector(advertsSelector);
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   
@@ -25,12 +25,12 @@ export const CatalogPage = () => {
 
   return (
     <CatalogContainer>
-      {adverds.length > 0 && (
+      {adverts.length > 0 && (
         <>
           <AsvertsFilter />
           <ListContainder>
-            <AdvertsList adverds={adverds} />
-            <ButtonLoadMore onClick={handleClick}>Loade more</ButtonLoadMore>
+            <AdvertsList adverts={adverts} />
+            <ButtonLoadMore onClick={handleClick}>Load more</ButtonLoadMore>
           </ListContainder>
         </>
       )}
