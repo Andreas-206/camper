@@ -1,7 +1,7 @@
 import { AdverdsCardItem } from "../AdverdsCardItem/AdverdsCardItem";
 import { AdverdsContainer, List } from "./AdvertsList.styled";
 
-export const AsvertsList = ({ adverds }) => {
+export const AdvertsList = ({ adverds }) => {
   return (
     <AdverdsContainer>
       <List>
