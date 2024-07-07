@@ -1,5 +1,15 @@
 import { useState } from "react";
-import styles from "./Form.module.css";
+import {
+  BtnSubmit,
+  FormContainer,
+  FormDesctiption,
+  FormHeader,
+  FormTitle,
+  Input,
+  InputsWrap,
+  Message,
+  TextArea,
+} from "./Form.styled";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -27,6 +37,7 @@ export const Form = () => {
     onSubmit: (values) => {
       if (formik.isValid) {
         setFormData(values);
+        console.log(formData);
         formik.resetForm();
         window.location.reload();
       } else {
@@ -34,66 +45,61 @@ export const Form = () => {
       }
     },
   });
-
   return (
-    <div className={styles.formContainer}>
-      <div className={styles.formHeader}>
-        <h2 className={styles.formTitle}>Book your camper now</h2>
-        <p className={styles.formDescription}>
+    <FormContainer>
+      <FormHeader>
+        <FormTitle>Book your campervan now</FormTitle>
+        <FormDesctiption>
           Stay connected! We are always ready to help you.
-        </p>
-      </div>
+        </FormDesctiption>
+      </FormHeader>
       <form onSubmit={formik.handleSubmit}>
-        <div className={styles.inputsWrap}>
-          <input
+        <InputsWrap>
+          <Input
             type="name"
             name="name"
             placeholder="Name"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.name}
-            className={styles.input}
           />
           {formik.errors.name && formik.touched.name ? (
-            <span className={styles.message}>{formik.errors.name}</span>
+            <Message>{formik.errors.name}</Message>
           ) : null}
-          <input
+          <Input
             type="email"
             name="email"
             placeholder="Email"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
-            className={styles.input}
           />
           {formik.errors.email && formik.touched.email ? (
-            <span className={styles.message}>{formik.errors.email}</span>
+            <Message>{formik.errors.email}</Message>
           ) : null}
-          <input
+          <Input
             type="date"
             name="date"
             placeholder="Booking date"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.date}
-            className={styles.input}
             min={new Date().toISOString().split("T")[0]}
           />
           {formik.errors.date && formik.touched.date ? (
-            <span className={styles.message}>{formik.errors.date}</span>
+            <Message>{formik.errors.date}</Message>
           ) : null}
-          <textarea
+          <TextArea
             type="text"
             name="comment"
             placeholder="Comment"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.comment}
-            className={styles.textArea}
           />
-        </div>
-        <button type="submit" className={styles.btnSubmit}>Send</button>
+        </InputsWrap>
+        <BtnSubmit type="submit">Send</BtnSubmit>
       </form>
-    </div>
+    </FormContainer>
   );
 };

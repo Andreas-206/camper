@@ -1,19 +1,21 @@
-.filterContainer {
+import styled from "styled-components";
+
+export const FilterContainer = styled.div`
   min-width: 360px;
-}
-.inputBlock {
+`;
+export const InputBlock = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-bottom: 32px;
-}
-.label {
+`;
+export const Label = styled.label`
   color: rgba(16, 24, 40, 0.6);
-}
-.inputContainer {
+`;
+export const InputContainer = styled.div`
   position: relative;
-}
-.input {
+`;
+export const Input = styled.input`
   border-radius: 10px;
   border: none;
   padding: 18px 40px 18px;
@@ -23,47 +25,47 @@
   color: var(--color-main);
   outline: none;
   width: 78%;
-}
 
-.input:focus + .svgMap {
-  opacity: 1;
-}
+  &:focus + svg {
+    opacity: 1;
+  }
 
-.input::placeholder {
-  color: rgba(16, 24, 40, 0.6);
-}
-.svgMap {
+  &::placeholder {
+    color: rgba(16, 24, 40, 0.6);
+  }
+`;
+export const SvgMap = styled.svg`
   position: absolute;
   fill: transparent;
   stroke: var(--color-main);
   opacity: 0.6;
   left: 18px;
   top: 32%;
-}
-.filterSection {
+`;
+export const FilterSection = styled.div`
   margin-bottom: 64px;
-}
-.filterTitle {
+`;
+export const FilterTitle = styled.h3`
   margin-bottom: 14px;
   font-weight: 500;
-}
-.equipmentList {
+`;
+export const EquipmentList = styled.ul`
   display: flex;
   gap: 8px 10px;
   flex-wrap: wrap;
   margin-bottom: 32px;
-}
-.equipmentTitle {
+`;
+export const EquipmentTitle = styled.h2`
   margin-bottom: 48px;
-}
-.typeTitle {
+`;
+export const TypeTitle = styled.h2`
   margin-bottom: 48px;
-}
-.typeList {
+`;
+export const TypeList = styled.ul`
   display: flex;
   gap: 10px;
-}
-.buttonSearch {
+`;
+export const ButtonSearch = styled.button`
   border-radius: 200px;
   padding: 16px 60px;
   width: 173px;
@@ -72,9 +74,9 @@
   line-height: 1.5;
   color: #fff;
   border: none;
-}
 
-.buttonSearch:hover,
-.buttonSearch:focus {
-  background-color: var(--color-button-hover);
-}
+  &:is(:hover),
+  &:is(:focus) {
+    background-color: var(--color-button-hover);
+  }
+`;

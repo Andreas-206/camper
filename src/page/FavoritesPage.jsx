@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { favoriteSelector } from "../redux/adverts/advertsSelectors";
 import { CatalogContainer } from "./CatalogPage.styled";
-import { AdvertsFilter } from "../components/AdvertsFilter/AdvertsFilter";
-import { AdvertsList } from "../components/AdvertsList/AdvertsList";
+import { AsvertsFilter } from "../components/AsvertsFilter/AsvertsFilter";
+import { AsvertsList } from "../components/AdvertsList/AsvertsList";
 import { Message } from "./FavoritesPage.styled";
 
 export const FavoritesPage = () => {
@@ -11,8 +11,8 @@ export const FavoritesPage = () => {
     <>
       {favorite.length > 0 ? (
         <CatalogContainer>
-          <AdvertsFilter />
-          <AdvertsList adverts={favorite} />
+          <AsvertsFilter />
+          <AsvertsList adverds={favorite} />
         </CatalogContainer>
       ) : (
         <Message>You have no favorites yet</Message>

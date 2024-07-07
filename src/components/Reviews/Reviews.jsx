@@ -10,10 +10,10 @@ import {
 } from "./Reviews.styled";
 import icons from "../../img/sprite.svg";
 
-export const Reviews = ({ advert }) => {
+export const Reviews = ({ adverd }) => {
   return (
     <ReviewsList>
-      {advert.reviews.map((review) => (
+      {adverd.reviews.map((review) => (
         <li key={nanoid()}>
           <ReviewsHeader>
             <Avatar>{review.reviewer_name.charAt(0)}</Avatar>

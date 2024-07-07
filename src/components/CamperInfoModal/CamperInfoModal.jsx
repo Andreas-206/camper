@@ -33,7 +33,7 @@ import { nanoid } from "nanoid";
 
 const modalRoot = document.querySelector("#modal");
 
-const CamperInfoModal = ({ onClose, advert }) => {
+const CamperInfoModal = ({ onClose, adverd }) => {
   useLockBodyScroll(true);
   const [isActive, setIsActive] = useState(true);
 
@@ -64,34 +64,34 @@ const CamperInfoModal = ({ onClose, advert }) => {
           </CloseIcon>
         </ButtonClose>
         <HeaderModal>
-          <NameCamper>{advert.name}</NameCamper>
+          <NameCamper>{adverd.name}</NameCamper>
           <InfoCamper>
             <ReviewsCamper>
               <IconStar>
                 <use href={`${icons}#icon-star`}></use>
               </IconStar>
               <u>
-                {advert.rating}({advert.reviews.length} Reviews)
+                {adverd.rating}({adverd.reviews.length} Reviews)
               </u>
             </ReviewsCamper>
             <LocationCamper>
               <IconLocation>
                 <use href={`${icons}#icon-map-pin`}></use>
               </IconLocation>
-              {advert.location}
+              {adverd.location}
             </LocationCamper>
           </InfoCamper>
-          <PriceCamper>{advert.price.toFixed(2)}</PriceCamper>
+          <PriceCamper>{adverd.price.toFixed(2)}</PriceCamper>
         </HeaderModal>
         <InfoContainer>
           <CalleryImg>
-            {advert.gallery.map((imgUrl) => (
+            {adverd.gallery.map((imgUrl) => (
               <ImgContainer key={nanoid()}>
-                <ImgCamper src={imgUrl} alt={advert.name} />
+                <ImgCamper src={imgUrl} alt={adverd.name} />
               </ImgContainer>
             ))}
           </CalleryImg>
-          <Description>{advert.description}</Description>
+          <Description>{adverd.description}</Description>
 
           <TabDetailsList>
             <TabDetailItem>
@@ -115,9 +115,9 @@ const CamperInfoModal = ({ onClose, advert }) => {
           </TabDetailsList>
           <DetailsContainer>
             {isActive ? (
-              <Features adverd={advert} />
+              <Features adverd={adverd} />
             ) : (
-              <Reviews adverd={advert} />
+              <Reviews adverd={adverd} />
             )}
             <Form />
           </DetailsContainer>

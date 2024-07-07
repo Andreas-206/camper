@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { AdvertsList } from "../components/AdvertsList/AdvertsList";
-import { AdvertsFilter } from "../components/AdvertsFilter/AdvertsFilter";
+import { AsvertsList } from "../components/AdvertsList/AsvertsList";
+import { AsvertsFilter } from "../components/AsvertsFilter/AsvertsFilter";
 import {
   ButtonLoadMore,
   CatalogContainer,
@@ -27,10 +27,10 @@ export const CatalogPage = () => {
     <CatalogContainer>
       {adverts.length > 0 && (
         <>
-          <AdvertsFilter />
+          <AsvertsFilter />
           <ListContainer>
-            <AdvertsList adverts={adverts} />
-            <ButtonLoadMore onClick={handleClick}>Load more</ButtonLoadMore>
+            <AsvertsList adverds={adverts} />
+            <ButtonLoadMore onClick={handleClick}>Loade more</ButtonLoadMore>
           </ListContainer>
         </>
       )}
