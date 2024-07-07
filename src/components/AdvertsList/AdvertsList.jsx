@@ -1,4 +1,4 @@
-import { AdvertsCardItem } from "../AdverdsCardItem/AdvertsCardItem";
+import { AdvertsCardItem } from "../AdvertsCardItem/AdvertsCardItem";
 import { AdvertsContainer, List } from "./AdvertsList.styled";
 
 export const AdvertsList = ({ adverts }) => {

@@ -15,7 +15,7 @@ import {
   SvgMap,
   TypeList,
   TypeTitle,
-} from "./AsvertsFilter.styled";
+} from "./AdvertsFilter.styled";
 const equipments = [
   { icon: "icon-airConditioner", text: "AC" },
   { icon: "icon-transmission", text: "Automatic" },
@@ -29,7 +29,7 @@ const types = [
   { icon: "icon-alcove", text: "Alcove" },
 ];
 
-export const AsvertsFilter = () => {
+export const AdvertsFilter = () => {
   return (
     <FilterContainer>
       <InputBlock>
