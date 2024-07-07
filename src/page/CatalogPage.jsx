@@ -1,16 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AdvertsList } from '../components/AdvertsList/AdvertsList';
-import { AdvertsFilter } from '../components/AdvertsFilter/AdvertsFilter';
-import styles from './CatalogPage.module.css';
-import { advertsSelector } from '../redux/adverts/advertsSelectors';
-import { getAdverts } from '../redux/adverts/advertsOperations';
+import { useDispatch, useSelector } from "react-redux";
+import { AsvertsList } from "../components/AdvertsList/AsvertsList";
+import { AsvertsFilter } from "../components/AsvertsFilter/AsvertsFilter";
+import {
+  ButtonLoadMore,
+  CatalogContainer,
+  ListContainer,
+} from "./CatalogPage.styled";
+import { useEffect, useState } from "react";
+import { advertsSelector } from "../redux/adverts/advertsSelectors";
+import { getAdverts } from "../redux/adverts/advertsOperations";
 
 export const CatalogPage = () => {
   const adverts = useSelector(advertsSelector);
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(getAdverts(page));
   }, [dispatch, page]);
@@ -20,18 +24,16 @@ export const CatalogPage = () => {
   };
 
   return (
-    <div className={styles.catalogContainer}>
+    <CatalogContainer>
       {adverts.length > 0 && (
         <>
-          <AdvertsFilter />
-          <div className={styles.listContainer}>
-            <AdvertsList adverts={adverts} />
-            <button className={styles.buttonLoadMore} onClick={handleClick}>
-              Load more
-            </button>
-          </div>
+          <AsvertsFilter />
+          <ListContainer>
+            <AsvertsList adverds={adverts} />
+            <ButtonLoadMore onClick={handleClick}>Loade more</ButtonLoadMore>
+          </ListContainer>
         </>
       )}
-    </div>
+    </CatalogContainer>
   );
 };
