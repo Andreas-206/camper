@@ -1,15 +1,16 @@
+import React from 'react';
 import { AdvertsCardItem } from "../AdvertsCardItem/AdvertsCardItem";
-import { AdvertsContainer, List } from "./AdvertsList.styled";
+import styles from "./AdvertsList.module.css";
 
 export const AdvertsList = ({ adverts }) => {
   return (
-    <AdvertsContainer>
-      <List>
+    <div className={styles.advertsContainer}>
+      <ul className={styles.list}>
         {adverts.length > 0 &&
           adverts.map((advert) => (
             <AdvertsCardItem key={advert._id} advert={advert} />
           ))}
-      </List>
-    </AdvertsContainer>
+      </ul>
+    </div>
   );
 };
