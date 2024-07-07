@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
-import { favoriteSelector } from "../redux/adverts/advertsSelectors";
-import { CatalogContainer } from "./CatalogPage.styled";
-import { AsvertsFilter } from "../components/AsvertsFilter/AsvertsFilter";
-import { AsvertsList } from "../components/AdvertsList/AsvertsList";
-import { Message } from "./FavoritesPage.styled";
+import { useSelector } from 'react-redux';
+import { favoriteSelector } from '../redux/adverts/advertsSelectors';
+import { CatalogContainer } from './CatalogPage.styled';
+import { AsvertsFilter } from '../components/AsvertsFilter/AsvertsFilter';
+import { AsvertsList } from '../components/AdvertsList/AdvertsList';
+import styles from './FavoritesPage.module.css';
 
 export const FavoritesPage = () => {
   const favorite = useSelector(favoriteSelector);
@@ -15,7 +15,7 @@ export const FavoritesPage = () => {
           <AsvertsList adverds={favorite} />
         </CatalogContainer>
       ) : (
-        <Message>You haven't added any favorites yet.</Message>
+        <p className={styles.message}>You haven't added any favorites yet.</p>
       )}
     </>
   );

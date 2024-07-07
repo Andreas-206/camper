@@ -1,16 +1,16 @@
-import styled from "styled-components";
-
-export const CatalogContainer = styled.div`
+.catalogContainer {
   display: flex;
   gap: 64px;
-`;
-export const ButtonLoadMore = styled.button`
+}
+
+.buttonLoadMore {
   padding: 16px 32px;
   border: 1px solid #47546733;
   border-radius: 200px;
   margin: 50px auto;
-`;
-export const ListContainer = styled.div`
+}
+
+.listContainer {
   display: flex;
   flex-direction: column;
-`;
+}
