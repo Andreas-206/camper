@@ -15,7 +15,7 @@ export const FavoritesPage = () => {
           <AsvertsList adverds={favorite} />
         </CatalogContainer>
       ) : (
-        <Message>You haven't added any favorites yet.</Message>
+        <Message>No favorite campers yet. Start adding your favorites now!</Message>
       )}
     </>
   );
