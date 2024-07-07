@@ -11,7 +11,7 @@ import {
 import { favoriteSelector } from "../../redux/adverts/advertsSelectors";
 import clsx from "clsx";
 
-export const AdvertsCardItem = ({ adverd }) => {
+export const AdvertsCardItem = ({ advert }) => {
   const [modal, setModal] = useState(false);
   const dispatch = useDispatch();
   const favorites = useSelector(favoriteSelector);
@@ -19,12 +19,12 @@ export const AdvertsCardItem = ({ adverd }) => {
   const switchFavorite = () => {
     const isCardFavorite = isFavorite();
     isCardFavorite
-      ? dispatch(removeFavorites(adverd._id))
-      : dispatch(addFavorites(adverd));
+      ? dispatch(removeFavorites(advert._id))
+      : dispatch(addFavorites(advert));
   };
 
   const isFavorite = () => {
-    return favorites.some((item) => item._id === adverd._id);
+    return favorites.some((item) => item._id === advert._id);
   };
 
   const onClose = () => {
@@ -37,11 +37,11 @@ export const AdvertsCardItem = ({ adverd }) => {
 
   return (
     <li className={styles.item}>
-      <img className={styles.imgCamper} src={adverd.gallery[0]} alt={adverd.name} />
+      <img className={styles.imgCamper} src={advert.gallery[0]} alt={advert.name} />
       <div className={styles.infoContainer}>
         <div className={styles.headerCamper}>
-          <h2 className={styles.nameCamper}>{adverd.name}</h2>
-          <p className={styles.priceCamper}>€{adverd.price.toFixed(2)}</p>
+          <h2 className={styles.nameCamper}>{advert.name}</h2>
+          <p className={styles.priceCamper}>€{advert.price.toFixed(2)}</p>
           <button type="button">
             <svg className={styles.iconHard} onClick={switchFavorite}>
               <use
@@ -59,30 +59,30 @@ export const AdvertsCardItem = ({ adverd }) => {
               <use href={`${icons}#icon-star`}></use>
             </svg>
             <u>
-              {adverd.rating}({adverd.reviews.length} Reviews)
+              {advert.rating}({advert.reviews.length} Reviews)
             </u>
           </p>
           <p className={styles.locationCamper}>
             <svg className={styles.iconLocation}>
               <use href={`${icons}#icon-map-pin`}></use>
             </svg>
-            {adverd.location}
+            {advert.location}
           </p>
         </div>
-        <p className={styles.description}>{adverd.description}</p>
+        <p className={styles.description}>{advert.description}</p>
         <ul className={styles.tapyCardList}>
-          <TypeCardItem icon="adults" text="adults" value={adverd.adults} />
+          <TypeCardItem icon="adults" text="adults" value={advert.adults} />
           <TypeCardItem icon="transmission" text="Automatic" />
           <TypeCardItem icon="engine" text="Petrol" />
           <TypeCardItem icon="kitchen" text="Kitchen" />
-          <TypeCardItem icon="beds" text="beds" value={adverd.details.beds} />
+          <TypeCardItem icon="beds" text="beds" value={advert.details.beds} />
           <TypeCardItem icon="airConditioner" text="AC" />
         </ul>
         <button type="button" className={styles.buttonShowMore} onClick={onOpen}>
           Show more
         </button>
       </div>
-      {modal && <CamperInfoModal onClose={onClose} adverd={adverd} />}
+      {modal && <CamperInfoModal onClose={onClose} advert={advert} />}
     </li>
   );
 };
