@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AdvertsList } from '../components/AdvertsList/AdvertsList';
 import { AdvertsFilter } from '../components/AdvertsFilter/AdvertsFilter';
