@@ -1,4 +1,4 @@
-import { AdvertsCardItem } from "../AdvertsCardItem/AdvertsCardItem";
+import { AdvertsCardItem } from "../AdverdsCardItem/AdvertsCardItem";
 import { AdvertsContainer, List } from "./AdvertsList.styled";
 
 export const AdvertsList = ({ adverts }) => {
@@ -7,7 +7,7 @@ export const AdvertsList = ({ adverts }) => {
       <List>
         {adverts.length > 0 &&
           adverts.map((advert) => (
-            <AdvertsCardItem key={advert._id} adverd={advert} />
+            <AdvertsCardItem key={advert._id} advert={advert} />
           ))}
       </List>
     </AdvertsContainer>

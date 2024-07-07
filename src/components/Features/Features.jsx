@@ -2,7 +2,7 @@ import { TypeCardItem } from "../TypeCardItem/TypeCardItem";
 import {
   DetailItem,
   DetailsList,
-  FeaturesContainr,
+  FeaturesContainer,
   TitleDetails,
   TypeCartList,
 } from "./Features.styled";
@@ -12,7 +12,7 @@ import { nanoid } from "nanoid";
 
 export const Features = ({ adverd }) => {
   return (
-    <FeaturesContainr>
+    <FeaturesContainer>
       <TypeCartList>
         <TypeCardItem icon="adults" text="adults" value={adverd.adults} />
         <TypeCardItem icon="transmission" text="Automatic" />
@@ -35,6 +35,6 @@ export const Features = ({ adverd }) => {
           </DetailItem>
         ))}
       </DetailsList>
-    </FeaturesContainr>
+    </FeaturesContainer>
   );
 };

@@ -10,7 +10,7 @@ export const ButtonLoadMore = styled.button`
   border-radius: 200px;
   margin: 50px auto;
 `;
-export const ListContainder = styled.div`
+export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;

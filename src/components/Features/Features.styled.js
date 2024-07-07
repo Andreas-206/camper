@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FeaturesContainr = styled.div`
+export const FeaturesContainer = styled.div`
   width: 430px;
 `;
 export const TypeCartList = styled.ul`
