@@ -1,21 +1,19 @@
-import styled from "styled-components";
-
-export const FilterContainer = styled.div`
+.filterContainer {
   min-width: 360px;
-`;
-export const InputBlock = styled.div`
+}
+.inputBlock {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-bottom: 32px;
-`;
-export const Label = styled.label`
+}
+.label {
   color: rgba(16, 24, 40, 0.6);
-`;
-export const InputContainer = styled.div`
+}
+.inputContainer {
   position: relative;
-`;
-export const Input = styled.input`
+}
+.input {
   border-radius: 10px;
   border: none;
   padding: 18px 40px 18px;
@@ -25,47 +23,47 @@ export const Input = styled.input`
   color: var(--color-main);
   outline: none;
   width: 78%;
+}
 
-  &:focus + svg {
-    opacity: 1;
-  }
+.input:focus + .svgMap {
+  opacity: 1;
+}
 
-  &::placeholder {
-    color: rgba(16, 24, 40, 0.6);
-  }
-`;
-export const SvgMap = styled.svg`
+.input::placeholder {
+  color: rgba(16, 24, 40, 0.6);
+}
+.svgMap {
   position: absolute;
   fill: transparent;
   stroke: var(--color-main);
   opacity: 0.6;
   left: 18px;
   top: 32%;
-`;
-export const FilterSection = styled.div`
+}
+.filterSection {
   margin-bottom: 64px;
-`;
-export const FilterTitle = styled.h3`
+}
+.filterTitle {
   margin-bottom: 14px;
   font-weight: 500;
-`;
-export const EquipmentList = styled.ul`
+}
+.equipmentList {
   display: flex;
   gap: 8px 10px;
   flex-wrap: wrap;
   margin-bottom: 32px;
-`;
-export const EquipmentTitle = styled.h2`
+}
+.equipmentTitle {
   margin-bottom: 48px;
-`;
-export const TypeTitle = styled.h2`
+}
+.typeTitle {
   margin-bottom: 48px;
-`;
-export const TypeList = styled.ul`
+}
+.typeList {
   display: flex;
   gap: 10px;
-`;
-export const ButtonSearch = styled.button`
+}
+.buttonSearch {
   border-radius: 200px;
   padding: 16px 60px;
   width: 173px;
@@ -74,9 +72,9 @@ export const ButtonSearch = styled.button`
   line-height: 1.5;
   color: #fff;
   border: none;
+}
 
-  &:is(:hover),
-  &:is(:focus) {
-    background-color: var(--color-button-hover);
-  }
-`;
+.buttonSearch:hover,
+.buttonSearch:focus {
+  background-color: var(--color-button-hover);
+}

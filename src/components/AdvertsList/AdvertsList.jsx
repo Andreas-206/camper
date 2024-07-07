@@ -1,6 +1,4 @@
-import React from 'react';
 import { AdvertsCardItem } from "../AdvertsCardItem/AdvertsCardItem";
-import styles from "./AdvertsList.module.css";
 
 export const AdvertsList = ({ adverts }) => {
   return (
