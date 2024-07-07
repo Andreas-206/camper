@@ -4,7 +4,7 @@ export const HomeMessage = styled.h1`
   width: 800px;
   margin: 150px auto;
   border: 4px solid var(--color-button);
-  border-radius: 200px;
+  border-radius: 20px;
   padding: 20px;
   color: var(--color-main);
 `;
