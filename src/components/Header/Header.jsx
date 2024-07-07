@@ -26,6 +26,7 @@ export const Header = () => {
             <Navlink to="/favorites">Favorites</Navlink>
           </li>
         </List>
+        ________________________________________________________________________________________
       </Navigation>
     </HeaderContainer>
   );
